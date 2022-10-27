@@ -1,0 +1,10 @@
+build:
+  maxIssues: 5
+  weights:
+    complexity: 2
+    LongParameterList: 1
+    comments: 0
+
+style:
+  UnusedImports:
+    active: true

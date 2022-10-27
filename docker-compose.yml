@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=sqs,s3
+      - DEBUG=1
+    volumes:
+      - ./docker/localstack/localstack-init-script.sh:/docker-entrypoint-initaws.d/create-resources.sh
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: root
+#  sonarqube: # disabled for now because of RAM consumption :P
+#    image: sonarqube
+#    ports:
+#      - "9000:9000"
