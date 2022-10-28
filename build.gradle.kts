@@ -19,6 +19,8 @@ dependencies {
     implementation("io.javalin:javalin:5.1.2")
     implementation("org.slf4j:slf4j-simple:2.0.3")
 
+    implementation("com.github.f4b6a3:ulid-creator:5.1.0")
+
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4.2")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.4")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4")

@@ -12,7 +12,6 @@ services:
       - ./docker/localstack/localstack-init-script.sh:/docker-entrypoint-initaws.d/create-resources.sh
   db:
     image: postgres
-    restart: always
     ports:
       - "5432:5432"
     environment:
