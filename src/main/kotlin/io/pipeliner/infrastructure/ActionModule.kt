@@ -1,6 +1,6 @@
 package io.pipeliner.infrastructure
 
-import io.pipeliner.data.ActionDAO
+import io.pipeliner.data.action.ActionDAO
 import io.pipeliner.data.access.IActionDAO
 import io.pipeliner.domain.ActionService
 import io.pipeliner.domain.access.IActionService

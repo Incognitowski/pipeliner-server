@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.7.10"
     application
     id("org.jetbrains.kotlinx.kover") version "0.6.1"
-    id("io.gitlab.arturbosch.detekt") version("1.22.0-RC2")
+    id("io.gitlab.arturbosch.detekt") version ("1.22.0-RC2")
     id("org.sonarqube") version "3.4.0.2513"
 }
 
@@ -33,6 +33,8 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-core:0.40.1")
     implementation("org.jetbrains.exposed:exposed-dao:0.40.1")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.40.1")
+    implementation("org.jetbrains.exposed:exposed-java-time:0.40.1")
+
 
     implementation("com.zaxxer:HikariCP:5.0.1")
     implementation("com.impossibl.pgjdbc-ng:pgjdbc-ng:0.8.9")
@@ -42,6 +44,9 @@ dependencies {
     testImplementation(kotlin("test"))
     testImplementation("com.tngtech.archunit:archunit-junit4:1.0.0")
     testImplementation("io.mockk:mockk:1.13.2")
+    testImplementation("org.testcontainers:testcontainers:1.17.5")
+    testImplementation("org.testcontainers:junit-jupiter:1.17.5")
+    testImplementation("org.testcontainers:postgresql:1.17.5")
 }
 
 kotlin.sourceSets["test"].kotlin.srcDirs("src/test", "src/archTest", "src/componentTest")

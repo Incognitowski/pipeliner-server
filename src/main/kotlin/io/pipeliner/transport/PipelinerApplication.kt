@@ -3,6 +3,7 @@ package io.pipeliner.transport
 import io.javalin.Javalin
 import io.pipeliner.infrastructure.ActionModule
 import io.pipeliner.infrastructure.DatabaseModule
+import io.pipeliner.infrastructure.ServiceModule
 import io.pipeliner.infrastructure.environment.ServerEnvironmentVariables
 import io.pipeliner.transport.action.ActionRouter
 import javax.sql.DataSource
@@ -58,6 +59,7 @@ object PipelinerApplication : KoinComponent {
         startKoin {
             modules(
                 DatabaseModule(),
+                ServiceModule(),
                 ActionModule(),
             )
         }

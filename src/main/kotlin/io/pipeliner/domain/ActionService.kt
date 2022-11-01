@@ -7,7 +7,7 @@ class ActionService(
     private val actionDAO : IActionDAO
 ) : IActionService {
     override fun createActions(): List<String> {
-//        actionDAO.createActions()
+        actionDAO.createActions()
         return emptyList()
     }
 }

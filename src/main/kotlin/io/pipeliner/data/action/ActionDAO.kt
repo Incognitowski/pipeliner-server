@@ -1,4 +1,4 @@
-package io.pipeliner.data
+package io.pipeliner.data.action
 
 import io.pipeliner.data.access.IActionDAO
 
