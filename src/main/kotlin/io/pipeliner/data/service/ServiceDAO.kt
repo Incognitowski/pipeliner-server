@@ -19,7 +19,7 @@ class ServiceDAO : IServiceDAO {
                 displayName = serviceCreation.name,
                 url = serviceCreation.url,
             )
-            val id = ServiceTable.insert {
+            val insertedId = ServiceTable.insert {
                 it[id] = UlidCreator.getUlid().toString()
                 it[name] = service.name
                 it[displayName] = service.displayName
@@ -28,7 +28,7 @@ class ServiceDAO : IServiceDAO {
                 it[createdAt] = service.createdAt
                 it[updatedAt] = service.updatedAt
             } get ServiceTable.id
-            service.copy(id = id)
+            service.copy(id = insertedId)
         }
     }
 
