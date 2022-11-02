@@ -1,4 +1,7 @@
 # Pipeliner Server
+
+[![Gradle Build](https://github.com/Incognitowski/pipeliner-server/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/Incognitowski/pipeliner-server/actions/workflows/gradle.yml)
+
 Pipeliner is a distributed pipeline execution service that enables arrangements of actions into pipelines 
 respecting inputs and outputs of actions in distributed services.
 
