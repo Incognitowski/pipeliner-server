@@ -7,3 +7,8 @@ queues to invoke actions on the remote servers.
 
 ### **I'm still thinking everything through, so chill.** 
 
+## Diagrams
+
+#### Action Creation Flow
+
+![Action Creation Flow Diagram](_readme_resources/d1_action_creation.png)
