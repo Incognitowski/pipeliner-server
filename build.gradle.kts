@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.javalin:javalin:5.1.2")
+    implementation("io.javalin:javalin:5.1.3")
     implementation("org.slf4j:slf4j-simple:2.0.3")
 
     implementation("com.github.f4b6a3:ulid-creator:5.1.0")
