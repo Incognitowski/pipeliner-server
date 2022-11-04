@@ -12,9 +12,7 @@ import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.testcontainers.containers.PostgreSQLContainer
-import org.testcontainers.junit.jupiter.Testcontainers
 
-@Testcontainers
 class DatabaseTest : AfterAllCallback, BeforeAllCallback, AfterEachCallback, BeforeEachCallback {
 
     private var postgresPort : Int = 0

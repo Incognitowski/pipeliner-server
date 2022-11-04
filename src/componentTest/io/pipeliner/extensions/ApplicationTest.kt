@@ -8,9 +8,7 @@ import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.testcontainers.containers.DockerComposeContainer
 import org.testcontainers.containers.output.OutputFrame
-import org.testcontainers.junit.jupiter.Testcontainers
 
-@Testcontainers
 class ApplicationTest : AfterAllCallback, BeforeAllCallback {
 
     private lateinit var container: DockerComposeContainer<*>

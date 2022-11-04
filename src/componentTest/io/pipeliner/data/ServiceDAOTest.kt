@@ -13,9 +13,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
-import org.testcontainers.junit.jupiter.Testcontainers
 
-@Testcontainers
 @ExtendWith(DatabaseTest::class)
 class ServiceDAOTest {
 
