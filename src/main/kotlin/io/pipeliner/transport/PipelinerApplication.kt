@@ -1,11 +1,14 @@
 package io.pipeliner.transport
 
 import io.javalin.Javalin
+import io.javalin.config.JavalinConfig
 import io.pipeliner.infrastructure.ActionModule
+import io.pipeliner.infrastructure.ConfigurationModule
 import io.pipeliner.infrastructure.DatabaseModule
 import io.pipeliner.infrastructure.ServiceModule
 import io.pipeliner.infrastructure.environment.ServerEnvironmentVariables
 import io.pipeliner.transport.action.ActionRouter
+import io.pipeliner.transport.configuration.ExceptionHandler
 import javax.sql.DataSource
 import org.flywaydb.core.Flyway
 import org.jetbrains.exposed.sql.Database
@@ -32,11 +35,20 @@ object PipelinerApplication : KoinComponent {
     }
 
     private fun startServer(): Javalin {
-        return Javalin.create().start(
-            ServerEnvironmentVariables.serverPort
-        ).also {
+        return Javalin.create {
+            configureAccessManager(it)
+        }.start(ServerEnvironmentVariables.serverPort).also {
+            configureExceptionHandler(it)
             registerRoutes(it)
         }
+    }
+
+    private fun configureAccessManager(javalinConfig: JavalinConfig) {
+        javalinConfig.accessManager(get())
+    }
+
+    private fun configureExceptionHandler(javalin: Javalin) {
+        javalin.exception(Exception::class.java, ExceptionHandler::handle)
     }
 
     private fun registerRoutes(javalin: Javalin) {
@@ -59,6 +71,7 @@ object PipelinerApplication : KoinComponent {
         startKoin {
             modules(
                 DatabaseModule(),
+                ConfigurationModule(),
                 ServiceModule(),
                 ActionModule(),
             )
